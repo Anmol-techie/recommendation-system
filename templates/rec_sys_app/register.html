@@ -1,0 +1,16 @@
+{% extends "rec_sys_app/base.html" %}
+{% block body_block %}
+<div class="container">
+    <div class="jumbotron">
+        <h1>Sign Up</h1>
+        <form method="post" action="#">
+            {% csrf_token %}
+            <label for="username">Username</label>
+            <input type="text" name="username" placeholder="username">
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="password">
+            <input type="submit" value="Sign Up">
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -16,6 +16,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
+MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 
 
 # Quick-start development settings - unsuitable for production
@@ -41,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
-    'rec_sys_app.apps.RecSysAppConfig',
+    'rec_sys_app',
 ]
 
 MIDDLEWARE = [
@@ -174,3 +175,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [     # can not be changed.
     STATIC_DIR,
 ]
+
+# MEDIA INFORMATION:
+MEDIA_URL = "/media/"
+MEDIA_ROOT = MEDIA_DIR

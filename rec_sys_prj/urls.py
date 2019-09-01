@@ -24,5 +24,7 @@ urlpatterns = [
     path('login', views.login),
     path('newtransaction', views.newtransaction),
 
+    re_path(r'^rec_sys_app/',include('rec_sys_app.urls')),
+    re_path(r'^$', views.index, name="indexx"),
     # re_path(r'help$', include('rec_sys_app.urls'))
 ]

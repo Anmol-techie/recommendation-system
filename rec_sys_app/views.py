@@ -17,6 +17,12 @@ from rest_framework.response import Response
 
 
 # Create your views here.
+def index(request):
+    return render(request, 'rec_sys_app/index.html')
+
+
+def register(request):
+    pass
 
 @csrf_exempt
 @api_view(["POST"])
@@ -31,6 +37,15 @@ def login(request):
         return Response({'error': 'Invalid Credentials'}, status=HTTP_404_NOT_FOUND)
     token, _ = Token.objects.get_or_create(user=user)
     return Response({'token': token.key}, status=HTTP_200_OK)
+
+
+def logout(request):
+    pass
+
+
+def profile(request):
+    pass
+
 
 @csrf_exempt
 @api_view(["POST"])

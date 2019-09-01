@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <!--version is very important.-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <!--indexx is defined in urls.py==> name='indexx'-->
+                    <a class="navbar-brand" href="{% url 'indexx' %}">Home</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <!--{# Django Home Link / Admin Link / Register Link#}-->
+                        <li><a class="navbar-link" href="{% url 'admin:index' %}">Admin</a></li>
+                        {% if user.is_authenticated %}
+                        <li><a class="navbar-link" href="{% url 'rec_sys_app:profile' %}">user.username</a></li>
+                        <li><a class="navbar-link" href="{% url 'rec_sys_app:logout' %}">Log Out</a></li>
+                        {% else %}
+                        <li><a class="navbar-link" href="{% url 'rec_sys_app:login' %}">Sign in</a></li>
+                        <li><a class="navbar-link" href="{% url 'rec_sys_app:register' %}">Sign Up</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            {% block body_block %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

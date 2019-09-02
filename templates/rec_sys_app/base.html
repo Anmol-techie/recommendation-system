@@ -18,10 +18,10 @@
                         <!--{# Django Home Link / Admin Link / Register Link#}-->
                         <li><a class="navbar-link" href="{% url 'admin:index' %}">Admin</a></li>
                         {% if user.is_authenticated %}
-                        <li><a class="navbar-link" href="{% url 'rec_sys_app:profile' %}">user.username</a></li>
-                        <li><a class="navbar-link" href="{% url 'rec_sys_app:logout' %}">Log Out</a></li>
+                        <li><a class="navbar-link" href="{% url 'rec_sys_app:profile' %}">{{ user.username }}</a></li>
+                        <li><a class="navbar-link" href="{% url 'rec_sys_app:user_logout' %}">Log Out</a></li>
                         {% else %}
-                        <li><a class="navbar-link" href="{% url 'rec_sys_app:login' %}">Sign in</a></li>
+                        <li><a class="navbar-link" href="{% url 'rec_sys_app:user_login' %}">Sign in</a></li>
                         <li><a class="navbar-link" href="{% url 'rec_sys_app:register' %}">Sign Up</a></li>
                         {% endif %}
                     </ul>
